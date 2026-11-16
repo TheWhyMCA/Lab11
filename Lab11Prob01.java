@@ -11,9 +11,10 @@ public class Lab11Prob01 {
 
 	public static void main(String[] args) {
 
-		try {
-			DataInputStream input = new DataInputStream(new BufferedInputStream(new FileInputStream("src/people.dat")));
-			DataOutputStream output = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("src/people-copy.dat")));
+		try (DataInputStream input = new DataInputStream(
+				new BufferedInputStream(new FileInputStream("src/people.dat")));
+				DataOutputStream output = new DataOutputStream(
+						new BufferedOutputStream(new FileOutputStream("src/people-copy.dat")));) {
 			int age = 0;
 			String name = "";
 			String address = "";
